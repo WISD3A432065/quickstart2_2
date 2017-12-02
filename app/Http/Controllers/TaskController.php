@@ -54,4 +54,15 @@ class TaskController extends Controller
         return redirect('/tasks');
         // Create The Task...
     }
+    /**
+     * 移除給定的任務。
+     *
+     * @param  Request  $request
+     * @param  Task  $task
+     * @return Response
+     */
+    public function destroy(Request $request, Task $task)
+    {
+        //
+    }
 }
