@@ -18,3 +18,9 @@ Route::get('/', function () {
 
 //認證路由
 Route::auth();
+
+
+//建置對應至控制器的路由
+Route::get('/tasks', 'TaskController@index');
+Route::post('/task', 'TaskController@store');
+Route::delete('/task/{task}', 'TaskController@destroy');
