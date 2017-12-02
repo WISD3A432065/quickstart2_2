@@ -31,15 +31,22 @@ class TaskController extends Controller
 
     /**
      * 建立新的任務。
-    *
-    * @param  Request  $request
+     *
+     * @param  Request  $request
      * @return Response
      */
     public function store(Request $request)
     {
-       $this->validate($request, [
-          'name' => 'required|max:255',
-    ]);
+        $this->validate($request, [
+            'name' => 'required|max:255',
+        ]);
+
+        $request->user()->tasks()->create([
+            'name' => $request->name,
+        ]);
+
+        return redirect('/tasks');
+    }
 
     // Create The Task...
     }
